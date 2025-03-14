@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Fredoka One';
+    src: url('assets/FredokaOne.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Fredoka One', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-size: 4rem;
+    background: linear-gradient(135deg, white, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: floatText 3s infinite ease-in-out alternate;
+}
+
+.subtitle {
+    font-size: 2rem;
+    margin-top: 10px;
+    animation: floatText 3s infinite ease-in-out alternate;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: floatText 3s infinite ease-in-out alternate;
+}
+
+@keyframes floatText {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+/* Rotating Gradient Border */
+body::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, red, black, red);
+    background-size: 300% 300%;
+    animation: rotateBorder 6s infinite linear;
+    z-index: 1;
+    filter: blur(10px);
+}
+
+@keyframes rotateBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
