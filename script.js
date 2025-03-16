@@ -1,10 +1,4 @@
-// Toggle Dropdown Menu
-function toggleMenu() {
-    var menu = document.getElementById("dropdownMenu");
-    menu.classList.toggle("active");
-}
-
-// Countdown Timer
+// Countdown Timer Function
 function startCountdown() {
     // Set the countdown duration (7 hours, 59 minutes, 59 seconds from now)
     let countdownTime = new Date();
@@ -37,7 +31,7 @@ function startCountdown() {
     }
 
     let countdownInterval = setInterval(updateTimer, 1000);
-    updateTimer(); // Initial call to avoid 1-second delay
+    updateTimer(); // Initial call to prevent 1-second delay
 }
 
 // Dropdown Menu Functionality
