@@ -1,44 +1,35 @@
-// Countdown Timer Function
-function startCountdown() {
-    // Set the countdown duration (7 hours, 59 minutes, 59 seconds from now)
-    let countdownTime = new Date();
-    countdownTime.setHours(countdownTime.getHours() + 7);
-    countdownTime.setMinutes(countdownTime.getMinutes() + 59);
-    countdownTime.setSeconds(countdownTime.getSeconds() + 59);
+document.addEventListener("DOMContentLoaded", function () {
+    // Countdown Timer
+    let countdownTime = 7 * 3600 + 59 * 60 + 59; // 7 hours, 59 minutes, 59 seconds
 
-    function updateTimer() {
-        let now = new Date().getTime();
-        let timeLeft = countdownTime - now;
+    function updateCountdown() {
+        let days = Math.floor(countdownTime / 86400);
+        let hours = Math.floor((countdownTime % 86400) / 3600);
+        let minutes = Math.floor((countdownTime % 3600) / 60);
+        let seconds = countdownTime % 60;
 
-        if (timeLeft <= 0) {
-            document.getElementById("days").innerHTML = "00";
-            document.getElementById("hours").innerHTML = "00";
-            document.getElementById("minutes").innerHTML = "00";
-            document.getElementById("seconds").innerHTML = "00";
-            clearInterval(countdownInterval);
-            return;
+        document.getElementById("days").textContent = String(days).padStart(2, '0');
+        document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+
+        if (countdownTime > 0) {
+            countdownTime--;
+            setTimeout(updateCountdown, 1000);
         }
-
-        let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-        let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-        document.getElementById("days").innerHTML = String(days).padStart(2, '0');
-        document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
-        document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
-        document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
     }
 
-    let countdownInterval = setInterval(updateTimer, 1000);
-    updateTimer(); // Initial call to prevent 1-second delay
-}
+    updateCountdown();
 
-// Dropdown Menu Functionality
-function toggleMenu() {
-    const menu = document.getElementById("dropdownMenu");
-    menu.classList.toggle("active");
-}
+    // Menu Toggle
+    const menuBtn = document.querySelector(".menu-btn");
+    const dropdownMenu = document.getElementById("dropdownMenu");
 
-// Start Countdown on Page Load
-window.onload = startCountdown;
+    menuBtn.addEventListener("click", function () {
+        if (dropdownMenu.style.display === "block") {
+            dropdownMenu.style.display = "none";
+        } else {
+            dropdownMenu.style.display = "block";
+        }
+    });
+});
