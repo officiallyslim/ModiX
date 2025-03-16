@@ -17,44 +17,20 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* Countdown */
+/* Countdown (Centered in One Line) */
 .countdown {
     font-size: 2em;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* Menu Button */
-.menu-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* Dropdown Menu */
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
+/* Countdown Boxes */
+.countdown div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
     border-radius: 5px;
-    box-shadow: 0px 0px 15px red; /* Red glow effect */
-}
-
-.menu-item {
-    display: block;
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.menu-item:hover {
-    color: cyan;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px red;
 }
