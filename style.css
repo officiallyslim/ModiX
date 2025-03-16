@@ -57,14 +57,14 @@ body {
 
 .title {
     font-size: 4rem;
-    text-shadow: 0 0 15px white;
+    text-shadow: 0 0 5px white; /* Reduced glow */
     animation: hoverEffect 3s infinite alternate ease-in-out;
 }
 
 .slogan {
     font-size: 1.5rem;
-    margin-top: 10px;
-    text-shadow: 0 0 10px red;
+    margin-top: 20px; /* Increased spacing */
+    text-shadow: 0 0 5px red;
 }
 
 .countdown {
@@ -101,7 +101,7 @@ body {
     position: fixed;
     top: 60px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.6); /* Black transparent background */
     padding: 10px;
     border-radius: 10px;
     display: none;
