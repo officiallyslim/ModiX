@@ -327,3 +327,30 @@ ul {
 .back-btn:hover {
     background: #0056b3;
 }
+/* Push content down for better spacing */
+.container {
+    max-width: 800px;
+    margin: 80px auto; /* Increased top margin */
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px; /* Added space below title */
+}
+
+.last-updated {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px; /* Added spacing below "Last Updated" */
+}
+
+/* Remove Back Button */
+.back-btn {
+    display: none;
+}
