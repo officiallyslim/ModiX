@@ -9,13 +9,55 @@ body {
     overflow: hidden;
 }
 
+/* Center Content Properly */
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+
+/* Title */
+.title {
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 20px white;
+    margin-bottom: 10px;
+}
+
+/* Slogan */
+.slogan {
+    font-size: 20px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* Countdown Timer */
+.countdown {
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px red;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Countdown Digits */
+.countdown div {
+    min-width: 50px;
+    text-align: center;
+}
+
 /* Menu Button (☰) */
 .menu-btn {
     position: fixed;
     top: 20px;
     right: 20px;
     font-size: 30px;
-    background: none; /* No gray box */
+    background: none;
     color: white;
     border: none;
     cursor: pointer;
@@ -68,28 +110,4 @@ body {
 
 .menu-item:hover {
     background: rgba(255, 255, 255, 0.3);
-}
-
-/* Title */
-.title {
-    font-size: 50px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-top: 50px;
-    text-shadow: 0px 0px 20px white;
-}
-
-/* Slogan */
-.slogan {
-    font-size: 20px;
-    margin-top: 10px;
-    opacity: 0.8;
-}
-
-/* Countdown Timer */
-.countdown {
-    font-size: 30px;
-    margin-top: 20px;
-    font-weight: bold;
-    text-shadow: 0px 0px 10px red;
 }
