@@ -1,20 +1,20 @@
-/* Menu Button */
+/* Menu Button (No Background) */
 .menu-btn {
     position: fixed;
     top: 20px;
     right: 20px;
     font-size: 30px;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 10px 15px;
+    background: none; /* Remove background */
+    color: white; /* Ensure the text is visible */
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     z-index: 100;
-    transition: 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
+/* Add a slight scale effect on hover */
 .menu-btn:hover {
-    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
 }
 
 /* Dropdown Menu (Hidden by Default) */
