@@ -8,8 +8,18 @@
 </head>
 <body>
 
-    <!-- Back Button -->
-    <button class="back-btn" onclick="window.location.href='index.html'">← Back</button>
+    <!-- Menu Button -->
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <!-- Dropdown Menu -->
+    <div id="dropdownMenu" class="dropdown-menu">
+        <a href="index.html" class="menu-item">Home</a>
+        <a href="ModiX.html" class="menu-item">ModiX</a>
+        <a href="Discord.html" class="menu-item">Discord</a>
+        <a href="About.html" class="menu-item">About</a>
+        <a href="TermsOfService.html" class="menu-item">Terms Of Service</a>
+        <a href="More.html" class="menu-item">More</a>
+    </div>
 
     <!-- Page Title -->
     <h1 class="page-title">Discord Servers</h1>
@@ -30,5 +40,6 @@
         </ul>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
