@@ -1,7 +1,16 @@
 // Toggle Dropdown Menu
 function toggleMenu() {
     let menu = document.getElementById("dropdownMenu");
+    let content = document.querySelector(".center-container");
+
     menu.classList.toggle("show");
+
+    // Blur background when menu is open
+    if (menu.classList.contains("show")) {
+        content.classList.add("menu-open-blur");
+    } else {
+        content.classList.remove("menu-open-blur");
+    }
 }
 
 // Countdown Timer (Global)
