@@ -9,7 +9,7 @@ body {
     text-align: center;
 }
 
-/* Centering Content */
+/* Center Content */
 .center-container {
     position: absolute;
     top: 50%;
@@ -26,23 +26,14 @@ body {
     gap: 10px;
 }
 
-/* Countdown Boxes */
-.countdown div {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-shadow: 0px 0px 5px red;
-}
-
 /* Countdown Note */
 .countdown-note {
-    font-size: 0.8em; /* Smaller Font */
-    color: rgba(255, 255, 255, 0.7); /* Slightly Dim */
-    margin-top: 5px; /* Small Space Below Countdown */
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
 }
 
-/* Menu Button */
+/* Menu Button (Top Right) */
 .menu-btn {
     position: fixed;
     top: 20px;
@@ -57,22 +48,24 @@ body {
 
 /* Dropdown Menu */
 .dropdown-menu {
-    display: none;
     position: fixed;
     top: 60px;
     right: 20px;
+    width: 200px;
     background: rgba(0, 0, 0, 0.9);
     border-radius: 8px;
-    padding: 10px;
     box-shadow: 0px 0px 10px red;
-    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
     opacity: 0;
     transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
 }
 
-/* Show Menu */
+/* Show Dropdown Menu */
 .dropdown-menu.show {
-    display: block;
+    display: flex;
     opacity: 1;
     transform: translateY(0);
 }
