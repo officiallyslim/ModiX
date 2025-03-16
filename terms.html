@@ -4,27 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - ModiX</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .back-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            width: fit-content;
+        }
+        .back-btn:hover {
+            background: #0056b3;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Rotating Border -->
-    <div class="border"></div>
-
-    <!-- Menu Button -->
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-    <!-- Dropdown Menu -->
-    <div id="dropdownMenu" class="dropdown-menu">
-        <a href="index.html" class="menu-item">Home</a>
-        <a href="modix.html" class="menu-item">ModiX</a>
-        <a href="discord.html" class="menu-item">Discord</a>
-        <a href="about.html" class="menu-item">About</a>
-        <a href="terms.html" class="menu-item">Terms Of Service</a>
-        <a href="more.html" class="menu-item">More</a>
-    </div>
-
-    <!-- Terms of Service Content -->
     <div class="container">
         <h1>Terms of Service</h1>
         <p>Last Updated: March 2025</p>
@@ -53,7 +79,5 @@
 
         <a href="index.html" class="back-btn">Back to Home</a>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
