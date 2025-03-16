@@ -4,12 +4,13 @@ function toggleMenu() {
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
 }
 
-// Global Countdown Timer
-const targetDate = new Date("March 20, 2025 23:59:59").getTime();
+// Set countdown to 2 hours from now
+const now = new Date().getTime();
+const targetDate = now + (2 * 60 * 60 * 1000); // 2 hours in milliseconds
 
 function updateCountdown() {
-    const now = new Date().getTime();
-    const timeLeft = targetDate - now;
+    const currentTime = new Date().getTime();
+    const timeLeft = targetDate - currentTime;
 
     if (timeLeft <= 0) {
         document.querySelector(".countdown").innerHTML = "Time's up!";
