@@ -8,7 +8,7 @@ body {
     background: black;
     color: white;
     text-align: center;
-    overflow: hidden;
+    overflow-x: hidden; /* Allow vertical scrolling, but prevent horizontal scrolling */
 }
 
 /* Centered Content */
