@@ -110,3 +110,55 @@ body {
 .menu-item:hover {
     color: red;
 }
+/* Back Button */
+.back-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: darkred;
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+/* Server Section */
+.server-section {
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.server-section h2 {
+    font-size: 1.5em;
+    color: white;
+}
+
+.server-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.server-section a {
+    color: red;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.server-section a:hover {
+    text-decoration: underline;
+}
