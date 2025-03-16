@@ -1,37 +1,3 @@
-/* Global Styles */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    color: white;
-    font-family: 'Fredoka One', sans-serif;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Rotating Border */
-@keyframes borderRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.border {
-    position: fixed;
-    top: -5px;
-    left: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
-    border: 5px solid transparent;
-    border-image: linear-gradient(45deg, red, black, red);
-    border-image-slice: 1;
-    animation: borderRotate 8s linear infinite;
-}
-
 /* Menu Button */
 .menu-btn {
     position: fixed;
@@ -51,7 +17,7 @@ body {
     background: rgba(255, 255, 255, 0.4);
 }
 
-/* Dropdown Menu */
+/* Dropdown Menu (Hidden by Default) */
 .dropdown-menu {
     position: fixed;
     top: 60px;
@@ -61,7 +27,7 @@ body {
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 10px 0;
-    display: none;
+    display: none; /* Initially hidden */
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -91,44 +57,4 @@ body {
 
 .menu-item:hover {
     background: rgba(255, 255, 255, 0.3);
-}
-
-/* Title Styling */
-.title {
-    font-size: 4rem;
-    color: white;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    animation: floatText 3s infinite ease-in-out;
-}
-
-/* Slogan */
-.slogan {
-    font-size: 1.5rem;
-    margin-top: -10px;
-    opacity: 0.8;
-}
-
-/* Countdown Timer */
-.countdown {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.countdown div {
-    font-size: 2rem;
-    padding: 10px;
-    background: rgba(255, 0, 0, 0.2);
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.7);
-}
-
-/* Floating Effect */
-@keyframes floatText {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-.hover-effect {
-    animation: floatText 3s infinite ease-in-out;
 }
