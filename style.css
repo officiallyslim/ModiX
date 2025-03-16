@@ -19,7 +19,7 @@ body {
     overflow: hidden;
 }
 
-/* Glowing Border Animation */
+/* Animated Border that travels around the screen */
 .border {
     position: fixed;
     top: 0;
@@ -34,16 +34,17 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    box-shadow: 0 0 15px red;
-    animation: border-glow 4s linear infinite;
+    border: 3px solid red;
+    box-shadow: 0 0 10px red;
+    animation: borderMove 4s linear infinite;
 }
 
-@keyframes border-glow {
-    0% { box-shadow: inset 2px 0 red; }
-    25% { box-shadow: inset 0 2px red; }
-    50% { box-shadow: inset -2px 0 red; }
-    75% { box-shadow: inset 0 -2px red; }
-    100% { box-shadow: inset 2px 0 red; }
+@keyframes borderMove {
+    0% { clip-path: inset(0 100% 100% 0); }
+    25% { clip-path: inset(0 0 100% 100%); }
+    50% { clip-path: inset(100% 0 0 100%); }
+    75% { clip-path: inset(100% 100% 0 0); }
+    100% { clip-path: inset(0 100% 100% 0); }
 }
 
 /* Centered Content */
@@ -100,7 +101,7 @@ body {
     position: fixed;
     top: 60px;
     right: 20px;
-    background: rgba(0, 0, 0, 0.85); /* Less transparency */
+    background: rgba(0, 0, 0, 0.85);
     padding: 10px;
     border-radius: 10px;
     display: none;
@@ -108,23 +109,25 @@ body {
     animation: fadeIn 0.3s ease-in-out;
 }
 
+/* When menu is active */
+.menu-active {
+    display: block !important;
+}
+
+/* Menu Item Styling */
 .menu-item {
     display: block;
     padding: 10px 20px;
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    transition: 0.3s;
     text-align: center;
+    transition: 0.3s;
 }
 
+/* Glow effect on hover */
 .menu-item:hover {
     background-color: rgba(255, 0, 0, 0.3);
-    text-shadow: 0 0 10px red;
-}
-
-/* Menu Glow Effect */
-.menu-active .menu-item {
     text-shadow: 0 0 10px red;
 }
 
