@@ -42,14 +42,8 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             overflow: hidden;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        }
-
-        .dropdown-menu.show {
-            visibility: visible;
-            opacity: 1;
+            display: none;
+            z-index: 1000;
         }
 
         .dropdown-menu .btn {
@@ -141,8 +135,18 @@
     <script>
         function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
-            menu.classList.toggle("show");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
+
+        // Close menu if clicking outside of it
+        document.addEventListener("click", function(event) {
+            var menu = document.getElementById("dropdownMenu");
+            var menuButton = document.querySelector(".menu-btn");
+
+            if (!menu.contains(event.target) && event.target !== menuButton) {
+                menu.style.display = "none";
+            }
+        });
     </script>
     
 </body>
