@@ -18,24 +18,53 @@ body {
     position: relative;
 }
 
-/* Rotating Border Animation */
-.border {
+/* Moving Border Effect */
+.border::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     border: 4px solid transparent;
-    animation: border-rotate 4s linear infinite;
+    pointer-events: none;
+    animation: border-move 4s linear infinite;
 }
 
-@keyframes border-rotate {
-    0% { border-top: 4px solid red; }
-    25% { border-right: 4px solid red; border-top: none; }
-    50% { border-bottom: 4px solid red; border-right: none; }
-    75% { border-left: 4px solid red; border-bottom: none; }
-    100% { border-top: 4px solid red; border-left: none; }
+@keyframes border-move {
+    0% {
+        border-top: 4px solid red;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+        clip-path: inset(0 100% 100% 0);
+    }
+    25% {
+        border-top: 4px solid red;
+        border-right: 4px solid red;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+        clip-path: inset(0 0 100% 0);
+    }
+    50% {
+        border-top: 4px solid transparent;
+        border-right: 4px solid red;
+        border-bottom: 4px solid red;
+        border-left: 4px solid transparent;
+        clip-path: inset(0 0 0 100%);
+    }
+    75% {
+        border-top: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid red;
+        border-left: 4px solid red;
+        clip-path: inset(100% 0 0 0);
+    }
+    100% {
+        border-top: 4px solid red;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid transparent;
+        clip-path: inset(0 100% 100% 0);
+    }
 }
 
 /* Center Content */
