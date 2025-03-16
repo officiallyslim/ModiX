@@ -4,8 +4,18 @@ function toggleMenu() {
     menu.classList.toggle("active");
 }
 
-// Countdown Timer (00:07:59:59)
-const targetTime = new Date().getTime() + (7 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
+// Countdown Timer (00:07:59:59 in PST)
+function getTargetTime() {
+    let now = new Date();
+    let pstOffset = -8 * 60; // PST is UTC-8
+    let userOffset = now.getTimezoneOffset();
+    let offsetDiff = pstOffset - userOffset;
+    let adjustedTime = new Date(now.getTime() + offsetDiff * 60000);
+
+    return adjustedTime.getTime() + (7 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
+}
+
+const targetTime = getTargetTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
