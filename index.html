@@ -6,97 +6,9 @@
     <title>ModiX - Coming Soon</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        /* Menu Button */
-        .menu-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .menu-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Dropdown Menu */
+        /* Ensure Dropdown is Hidden Initially */
         .dropdown-menu {
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background: white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
             display: none;
-            z-index: 1000;
-        }
-
-        .dropdown-menu .btn {
-            display: block;
-            width: 150px;
-            padding: 10px;
-            text-align: center;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .dropdown-menu .btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Centered Content */
-        .center-container {
-            margin-top: 100px;
-        }
-
-        .title {
-            font-size: 36px;
-            color: #333;
-        }
-
-        .slogan {
-            font-size: 18px;
-            color: #555;
-        }
-
-        /* Countdown Timer */
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            font-size: 24px;
-            margin-top: 20px;
-        }
-
-        .countdown div {
-            background: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            min-width: 50px;
-        }
-
-        .countdown-note {
-            font-size: 14px;
-            color: #777;
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -138,7 +50,7 @@
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         }
 
-        // Close menu if clicking outside of it
+        // Close menu when clicking outside of it
         document.addEventListener("click", function(event) {
             var menu = document.getElementById("dropdownMenu");
             var menuButton = document.querySelector(".menu-btn");
