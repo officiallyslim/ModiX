@@ -1,22 +1,11 @@
-/* General Page Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Fredoka One', sans-serif;
-    background-color: black;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-}
-
-/* Menu Button (☰) */
+/* Menu Button (No Background) */
 .menu-btn {
     position: fixed;
     top: 20px;
     right: 20px;
     font-size: 30px;
-    background: none; /* No gray box */
-    color: white;
+    background: none; /* Removes background completely */
+    color: white; /* Ensures the icon is visible */
     border: none;
     cursor: pointer;
     z-index: 100;
@@ -28,68 +17,25 @@ body {
     transform: scale(1.1);
 }
 
-/* Dropdown Menu (Hidden by Default) */
+/* Dropdown Menu (More Transparent) */
 .dropdown-menu {
     position: fixed;
     top: 60px;
     right: 20px;
     width: 200px;
-    background: rgba(0, 0, 0, 0.6); /* Transparent Black */
-    backdrop-filter: blur(5px); /* Blurred Effect */
+    background: rgba(0, 0, 0, 0.6); /* Increase transparency */
+    backdrop-filter: blur(5px); /* Keep blur effect */
     border-radius: 10px;
     padding: 10px 0;
-    display: none; /* Initially Hidden */
+    display: none; /* Initially hidden */
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Show Menu When Active */
+/* Show menu when active */
 .dropdown-menu.active {
     display: block;
     opacity: 1;
     transform: translateY(0);
-}
-
-/* Menu Items */
-.menu-item {
-    display: block;
-    padding: 12px;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    font-size: 18px;
-    transition: 0.3s ease;
-    border-radius: 5px;
-    margin: 5px 10px;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.menu-item:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-/* Title */
-.title {
-    font-size: 50px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-top: 50px;
-    text-shadow: 0px 0px 20px white;
-}
-
-/* Slogan */
-.slogan {
-    font-size: 20px;
-    margin-top: 10px;
-    opacity: 0.8;
-}
-
-/* Countdown Timer */
-.countdown {
-    font-size: 30px;
-    margin-top: 20px;
-    font-weight: bold;
-    text-shadow: 0px 0px 10px red;
 }
