@@ -162,3 +162,75 @@ body {
 .server-section a:hover {
     text-decoration: underline;
 }
+/* Menu Button */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: none;
+    color: white;
+    font-size: 2em;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: fixed;
+    top: 50px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid red;
+    border-radius: 5px;
+    display: none;
+    padding: 10px;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.menu-item {
+    display: block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background: red;
+}
+
+/* Page Title */
+.page-title {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+/* Server Section */
+.server-section {
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.server-section h2 {
+    font-size: 1.5em;
+    color: white;
+}
+
+.server-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.server-section a {
+    color: red;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.server-section a:hover {
+    text-decoration: underline;
+}
