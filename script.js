@@ -4,42 +4,47 @@ function toggleMenu() {
     menu.classList.toggle("active");
 }
 
-// Countdown Timer (00:07:59:59 in PST)
-function getTargetTime() {
-    let now = new Date();
-    let pstOffset = -8 * 60; // PST is UTC-8
-    let userOffset = now.getTimezoneOffset();
-    let offsetDiff = pstOffset - userOffset;
-    let adjustedTime = new Date(now.getTime() + offsetDiff * 60000);
+// Countdown Timer
+function startCountdown() {
+    // Set the countdown duration (7 hours, 59 minutes, 59 seconds from now)
+    let countdownTime = new Date();
+    countdownTime.setHours(countdownTime.getHours() + 7);
+    countdownTime.setMinutes(countdownTime.getMinutes() + 59);
+    countdownTime.setSeconds(countdownTime.getSeconds() + 59);
 
-    return adjustedTime.getTime() + (7 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
-}
+    function updateTimer() {
+        let now = new Date().getTime();
+        let timeLeft = countdownTime - now;
 
-const targetTime = getTargetTime();
+        if (timeLeft <= 0) {
+            document.getElementById("days").innerHTML = "00";
+            document.getElementById("hours").innerHTML = "00";
+            document.getElementById("minutes").innerHTML = "00";
+            document.getElementById("seconds").innerHTML = "00";
+            clearInterval(countdownInterval);
+            return;
+        }
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const timeLeft = targetTime - now;
+        let days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    if (timeLeft <= 0) {
-        document.getElementById("days").innerText = "00";
-        document.getElementById("hours").innerText = "00";
-        document.getElementById("minutes").innerText = "00";
-        document.getElementById("seconds").innerText = "00";
-        return;
+        document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+        document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
     }
 
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerText = String(days).padStart(2, "0");
-    document.getElementById("hours").innerText = String(hours).padStart(2, "0");
-    document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
-    document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+    let countdownInterval = setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call to avoid 1-second delay
 }
 
-// Update Countdown Every Second
-setInterval(updateCountdown, 1000);
-updateCountdown();
+// Dropdown Menu Functionality
+function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.classList.toggle("active");
+}
+
+// Start Countdown on Page Load
+window.onload = startCountdown;
