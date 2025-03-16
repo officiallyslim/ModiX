@@ -255,3 +255,62 @@ ul {
 .back-btn:hover {
     background: #0056b3;
 }
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Main Content Container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #222;
+}
+
+/* Paragraphs */
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* List Styles */
+ul {
+    padding-left: 20px;
+}
+
+/* Back Button */
+.back-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: fit-content;
+}
+
+.back-btn:hover {
+    background: #0056b3;
+}
