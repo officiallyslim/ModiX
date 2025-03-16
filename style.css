@@ -19,27 +19,48 @@ body {
     z-index: 500;
 }
 
-/* Countdown (Centered in One Line) */
+/* ModiX Title - White Glow & Hover Effect */
+.title {
+    font-size: 2.8em;
+    transition: transform 0.3s ease-in-out;
+    text-shadow: 0px 0px 10px white, 0px 0px 18px white;
+}
+
+.title:hover {
+    transform: translateY(-3px);
+}
+
+/* Slogan */
+.slogan {
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+/* Countdown - White Box Glow */
 .countdown {
-    font-size: 2em;
-    margin-top: 10px;
+    font-size: 1.6em;
+    margin-top: 8px;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px white;
 }
 
 /* Countdown Note */
 .countdown-note {
     font-size: 0.8em;
     color: rgba(255, 255, 255, 0.7);
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 /* Menu Button (☰) */
 .menu-btn {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 15px;
+    right: 15px;
     background: none;
     border: none;
     color: white;
@@ -51,20 +72,20 @@ body {
 /* Dropdown Menu */
 .dropdown-menu {
     position: fixed;
-    top: 60px;
-    right: 20px;
-    width: 220px;
-    background: black; /* Black background */
-    border-radius: 8px;
-    box-shadow: 0px 0px 15px red; /* Red glow outline */
-    padding: 10px;
+    top: 50px;
+    right: 15px;
+    width: 180px;
+    background: black;
+    border-radius: 6px;
+    box-shadow: 0px 0px 12px red;
+    padding: 8px;
     display: none;
     flex-direction: column;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease-in-out;
     z-index: 1000;
-    border: 2px solid red; /* Red border outline */
+    border: 2px solid red;
 }
 
 /* Show Dropdown Menu */
@@ -79,23 +100,12 @@ body {
     display: block;
     color: white;
     text-decoration: none;
-    padding: 15px;
-    font-size: 1.2em;
+    padding: 10px;
+    font-size: 1em;
     transition: 0.3s;
     text-align: left;
 }
 
 .menu-item:hover {
     color: red;
-}
-
-/* ModiX Title - Now With White Glow */
-.title {
-    font-size: 3em;
-    transition: transform 0.3s ease-in-out;
-    text-shadow: 0px 0px 10px white, 0px 0px 20px white;
-}
-
-.title:hover {
-    transform: translateY(-5px);
 }
