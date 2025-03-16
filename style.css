@@ -5,18 +5,20 @@ body {
     font-family: 'Fredoka One', sans-serif;
     background-color: black;
     color: white;
-    text-align: center;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }
 
-/* Center Content Properly */
+/* Center Everything */
 .center-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Title */
@@ -76,11 +78,11 @@ body {
     top: 60px;
     right: 20px;
     width: 200px;
-    background: rgba(0, 0, 0, 0.6); /* Transparent Black */
-    backdrop-filter: blur(5px); /* Blurred Effect */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
     border-radius: 10px;
     padding: 10px 0;
-    display: none; /* Initially Hidden */
+    display: none;
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
