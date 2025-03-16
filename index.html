@@ -42,7 +42,14 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             overflow: hidden;
-            display: none;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .dropdown-menu.show {
+            visibility: visible;
+            opacity: 1;
         }
 
         .dropdown-menu .btn {
@@ -134,7 +141,7 @@
     <script>
         function toggleMenu() {
             var menu = document.getElementById("dropdownMenu");
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+            menu.classList.toggle("show");
         }
     </script>
     
