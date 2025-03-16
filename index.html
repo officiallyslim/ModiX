@@ -11,14 +11,14 @@
     <!-- Menu Button (☰) in Top Right -->
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <!-- Dropdown Menu (Hidden by Default) -->
-    <div id="dropdownMenu" class="dropdown-menu">
-        <a href="index.html" class="menu-item">Home</a>
-        <a href="modix.html" class="menu-item">ModiX</a>
-        <a href="discord.html" class="menu-item">Discord</a>
-        <a href="more.html" class="menu-item">More</a>
+    <!-- Dropdown Menu (Initially Hidden) -->
+    <div id="dropdownMenu" class="dropdown-menu" style="display: none;">
+        <a href="index.html" class="btn">Home</a>
+        <a href="modix.html" class="btn">ModiX</a>
+        <a href="discord.html" class="btn">Discord</a>
+        <a href="more.html" class="btn">More</a>
         <a href="about.html" class="btn">About ModiX</a>
-    <a href="terms.html" class="btn">Terms of Service</a>
+        <a href="terms.html" class="btn">Terms of Service</a>
     </div>
 
     <!-- Centered Content -->
@@ -38,7 +38,16 @@
         <p class="countdown-note">Until Next Update!</p>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            if (menu.style.display === "none") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
     
 </body>
 </html>
