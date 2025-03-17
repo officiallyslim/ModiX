@@ -18,7 +18,7 @@ function startCountdown() {
     let countdownTime = localStorage.getItem("countdownTime");
 
     if (!countdownTime) {
-        countdownTime = new Date().getTime() + (12 * 60 * 60 * 1000); // 2 hours from now
+        countdownTime = new Date().getTime() + (6 * 60 * 60 * 1000); // 2 hours from now
         localStorage.setItem("countdownTime", countdownTime);
     }
 
